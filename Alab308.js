@@ -54,6 +54,12 @@ const n4 = 5;
  console.log(`firstNumberLargerThanLast`);
 //  Check to see if the value of the first nuber was greater than the last number 
 
-const subtraction = (n2 - n1);
-console.log(`subtraction(n2 - n1): ${subtraction}`);
-// Getting an error in the console, code shows no errors in VS code
+const multiplicationResult = (subtractionResult * n3);
+ console.log(`Multiplication result (subtractionResult * n3): ${multiplicationResult}`);
+// Getting an error in the console, code shows no errors in VS code.
+
+const remainderResult = (multiplicationResult % n4);
+ console.log(`Remainder result (multiplicationResult % n4): ${remainderResult}`);
+ //Error remains and currently not able to verify if code is functioning correctly. Erroer is "// const remainderResult = (multiplicationResult % n4);
+// console.log(`Remainder result (multiplicationResult % n4): ${remainderResult}`);
+"
