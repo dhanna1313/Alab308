@@ -65,3 +65,54 @@ const remainderResult = (multiplicationResult % n4);
 const isOver25 = remainderResult > 25;
  console.log(`Remainder result is 25 or less: ${is25OrLess}`);
 //  Error remains, it appears the error was in the html document attached to this project. I removed and replaced boiler plate and script tag, nothing has changed.
+
+
+    // Used to calculate gallons needed to complete trip
+    const gallonsNeeded = distance / fuelEfficiency;
+
+    // Used to calculate total fuel cost
+    const totalFuelCost = gallonsNeeded * fuelCost;
+
+    // Used to check if budget is enough to complete trip
+    const budgetEnough = totalFuelCost <= fuelBudget;
+
+    //Used to  calculate the total  time taken for trip
+    const timeTaken = distance / speed;
+
+    
+
+
+// Outline the fuel efficency for the speeds
+const speeds = [55, 60, 75];
+const fuelEfficiencies = [30, 28, 23];
+
+// The results for each speed
+speeds.forEach((speed, index) => {
+    const result = roadTrip(speed, fuelEfficiencies[index]);
+    
+    console.log(`Results for traveling at ${speed} miles per hour:`);
+    console.log(`Gallons of fuel needed: ${result.gallonsNeeded} gallons`);
+    console.log(`Total fuel cost: $${result.totalFuelCost}`);
+    console.log(`Is the budget sufficient? ${result.budgetSufficient ? 'Yes' : 'No'}`);
+    console.log(`Time taken for the trip: ${result.timeTaken} hours`);
+    console.log("\n");
+});
+
+// Determine which speed makes the most sense to complete the trip
+function compareSpeeds(speeds, fuelEfficiencies, distance = 1500, fuelBudget = 175, fuelCost = 3) {
+    let bestSpeed = null;
+    let minCost = Infinity;
+    
+    speeds.forEach((speed, index) => {
+        const { totalFuelCost, budgetSufficient } = roadTrip(speed, fuelEfficiencies[index], distance, fuelBudget, fuelCost);
+        if (budgetSufficient && totalFuelCost < minCost) {
+            minCost = totalFuelCost;
+            bestSpeed = speed;
+        }
+    });
+    
+    return bestSpeed;
+}
+
+const bestSpeed = compareSpeeds(speeds, fuelEfficiencies);
+console.log(`The best speed for the trip is ${bestSpeed} miles per hour.`);
