@@ -55,11 +55,13 @@ const n4 = 5;
 //  Check to see if the value of the first nuber was greater than the last number 
 
 const multiplicationResult = (subtractionResult * n3);
- console.log(`Multiplication result (subtractionResult * n3): ${multiplicationResult}`);
+ console.log(`multiplicationResult (subtractionResult * n3): ${multiplicationResult}`);
 // Getting an error in the console, code shows no errors in VS code.
 
 const remainderResult = (multiplicationResult % n4);
  console.log(`Remainder result (multiplicationResult % n4): ${remainderResult}`);
- //Error remains and currently not able to verify if code is functioning correctly. Erroer is "// const remainderResult = (multiplicationResult % n4);
-// console.log(`Remainder result (multiplicationResult % n4): ${remainderResult}`);
-"
+ //Error remains and currently not able to verify if code is functioning correctly. Erroer is "Refused to execute script from 'http://127.0.0.1:5500/Mod1/Alab308.1/Alab308.1/Alab308.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.""
+
+const isOver25 = remainderResult > 25;
+ console.log(`Remainder result is 25 or less: ${is25OrLess}`);
+//  Error remains, it appears the error was in the html document attached to this project. I removed and replaced boiler plate and script tag, nothing has changed.
