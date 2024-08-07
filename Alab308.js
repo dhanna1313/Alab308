@@ -53,3 +53,7 @@ const n4 = 5;
  const firstNumberLargerThanLast = n1>n4;
  console.log(`firstNumberLargerThanLast`);
 //  Check to see if the value of the first nuber was greater than the last number 
+
+const subtraction = (n2 - n1);
+console.log(`subtraction(n2 - n1): ${subtraction}`);
+// Getting an error in the console, code shows no errors in VS code
